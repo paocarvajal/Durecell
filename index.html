@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duracell LATAM - Knowledge Capture Process</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- html2pdf.js for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        /* No SVG or Mermaid.js has been used in this document. */
+        /* Color Palette Used: Deep Ocean (#023047, #219EBC, #8ECAE6, #FFB700, #FB8500) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #d1d5db; /* gray-300 */
+            line-height: 1;
+        }
+        .flow-box {
+            border: 1px solid #e5e7eb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .flow-box h4 {
+            font-weight: bold;
+            color: #023047; /* Dark Blue from palette */
+        }
+        .flow-box p {
+            font-size: 0.875rem;
+            color: #4b5563; /* gray-600 */
+        }
+        .phase-title {
+            color: #FB8500; /* Orange Accent */
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #FFB700;
+            padding-bottom: 0.5rem;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Max width for chart container */
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px; /* Base height for desktop */
+            max-height: 400px; /* Max height for chart */
+        }
+        @media (max-width: 767px) {
+            .chart-container {
+                height: 300px; /* Smaller height for mobile */
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8" id="infographic-content">
+
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Duracell LATAM Expansion</h1>
+            <p class="text-xl text-gray-600 mt-2">Knowledge Capture & Transition Process - Functional View</p>
+            <button id="downloadPdf" class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out">
+                Download as PDF
+            </button>
+        </header>
+
+        <!-- Introduction Section -->
+        <section id="introduction" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-4 border-l-4 border-amber-500 pl-4">1. Project Overview & Refined Phasing</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <p class="text-lg leading-relaxed">
+                    This updated infographic provides a clear, function-specific view of the Knowledge Capture (KC) and Knowledge Transfer (KT) process for Duracell's new Latin America operations. Based on recent discussions, we've refined the project phasing to align with internal milestones and deliverables, clarifying the distinction between our "Go Live" and the client's "Observe/Assist/Execute" nomenclature. The focus is on a structured approach by functional stream, ensuring comprehensive knowledge transfer and readiness for production work.
+                </p>
+            </div>
+        </section>
+
+        <!-- Key Roles & Responsibilities Section -->
+        <section id="roles" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 border-l-4 border-amber-500 pl-4">2. Key Roles & Responsibilities</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-[#023047] mb-2">Duracell Business Team</h3>
+                    <p class="text-gray-600">Owns business processes, provides SMEs, creates Detailed Process Templates (DTPs), and validates captured knowledge. Key in the 'Observe' phase.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-[#023047] mb-2">PwC Consulting Team</h3>
+                    <p class="text-gray-600">Facilitates methodology, assesses DTPs, guides KT, and oversees training. Supports 'Assist' and 'Execute' phases.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-[#023047] mb-2">IT & Technology Team</h3>
+                    <p class="text-gray-600">Manages KC platform (SharePoint), communication tools (Teams), and system readiness. Crucial for enabling all phases with technology.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Phasing vs. Client's Nomenclature Section -->
+        <section id="nomenclature" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 border-l-4 border-amber-500 pl-4">3. Aligning on Nomenclature: Our Phases vs. Client's View</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <p class="text-lg leading-relaxed mb-4">
+                    A key point of alignment is the project phasing and the definition of "Go Live." Our internal project plan utilizes distinct phases with specific deliverables, which we need to clearly map against the client's operational terminology.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-[#219EBC] mb-3">Our Project Phases & Milestones</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                                <h4 class="font-bold text-[#023047]">Planning</h4>
+                                <p class="text-sm text-gray-700">Milestone: Transition Plan</p>
+                            </div>
+                            <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                                <h4 class="font-bold text-[#023047]">Knowledge Capture (KC)</h4>
+                                <p class="text-sm text-gray-700">Milestone: Finalized DTPs</p>
+                            </div>
+                            <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                                <h4 class="font-bold text-[#023047]">Knowledge Transfer (KT)</h4>
+                                <p class="text-sm text-gray-700">Milestone: Readiness for Production Work</p>
+                            </div>
+                            <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                                <h4 class="font-bold text-[#023047]">Service Rehearsal (Ramp to Volume)</h4>
+                                <p class="text-sm text-gray-700">Milestone: Full Service Rehearsal & Go-Live Report Issued</p>
+                            </div>
+                            <div class="p-4 bg-blue-50 rounded-md border border-blue-200">
+                                <h4 class="font-bold text-[#023047]">Hypercare</h4>
+                                <p class="text-sm text-gray-700">Milestone: 30-60-90 Day Plan Executed</p>
+                            </div>
+                            <div class="p-4 bg-green-100 rounded-md border border-green-300">
+                                <h4 class="font-bold text-[#023047]">Our Go Live</h4>
+                                <p class="text-sm text-gray-700">Occurs *after* Service Rehearsal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-[#FB8500] mb-3">Client's Operational View</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-orange-50 rounded-md border border-orange-200">
+                                <h4 class="font-bold text-[#023047]">Observe</h4>
+                                <p class="text-sm text-gray-700">Initial phase, understanding current state.</p>
+                            </div>
+                            <div class="p-4 bg-orange-50 rounded-md border border-orange-200">
+                                <h4 class="font-bold text-[#023047]">Assist</h4>
+                                <p class="text-sm text-gray-700">Providing support and guidance.</p>
+                            </div>
+                            <div class="p-4 bg-orange-50 rounded-md border border-orange-200">
+                                <h4 class="font-bold text-[#023047]">Execute</h4>
+                                <p class="text-sm text-gray-700">Performing the actual work.</p>
+                            </div>
+                            <div class="p-4 bg-red-100 rounded-md border border-red-300">
+                                <h4 class="font-bold text-[#023047]">Client's Go Live</h4>
+                                <p class="text-sm text-gray-700">Occurs *after* Execute phase</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Functional Process Flow Section -->
+        <section id="functional-flow" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 border-l-4 border-amber-500 pl-4">4. Functional Knowledge Transfer Flow & Go-Live Dates</h2>
+            <p class="text-lg leading-relaxed mb-6 bg-white p-6 rounded-lg shadow-md">
+                This section illustrates the Knowledge Transfer (KT) process by functional stream, highlighting key phases and our "Go Live" dates. This view is crucial for understanding specific responsibilities and timelines within GBS, HR Services, and Controllership.
+            </p>
+
+            <!-- GBS Stream -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-[#023047] mb-4 border-b-2 border-[#8ECAE6] pb-2">GBS Stream: Accounts Payable (AP) & Accounts Receivable (AR)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div class="flow-box md:col-span-1">
+                        <h4>PwC / Duracell</h4>
+                        <p>KT Planning & Scope Alignment for AP/AR.</p>
+                    </div>
+                    <div class="text-center flow-arrow">→</div>
+                    <div class="flow-box md:col-span-1">
+                        <h4>Duracell SME</h4>
+                        <p>Conducts KT Sessions for AP/AR processes.</p>
+                    </div>
+                    <div class="text-center flow-arrow">→</div>
+                    <div class="flow-box md:col-span-1">
+                        <h4>PwC / New Team</h4>
+                        <p>Service Rehearsal & Readiness Testing for AP/AR.</p>
+                        <p class="text-xs text-gray-500 mt-1">Milestone: Go-Live Report Issued</p>
+                    </div>
+                    <div class="text-center flow-arrow">→</div>
+                    <div class="flow-box md:col-span-1 bg-green-50 border-green-200">
+                        <h4 class="text-green-800">GBS AP/AR Go Live</h4>
+                        <p class="text-sm text-green-700">KT Start Date: TBD</p>
+                        <p class="text-sm text-green-700">Go Live Date: TBD</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Services Stream -->
+            <div class="mb-8 p-6 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-[#023047] mb-4 border-b-2 border-[#8ECAE6] pb-2">HR Services Stream: Payroll</h3>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div class="flow-box md:col-span-1">
+                        <h4>PwC / Duracell</h4>
+                        <p>KT Planning & Scope Alignment for Payroll.</p>
+                    </div>
+                    <div class="text-center flow-arrow">→</div>
+                    <div class="flow-box md:col-span-1">
+                        <h4>Duracell SME</h4>
+                        <p>Conducts KT Sessions for Payroll processes.</p>
+                    </div>
+                    <div class="text-center flow-arrow">→</div>
+                    <div class="flow-box md:col-span-1">
+                        <h4>PwC / New Team</h4>
+                        <p>Service Rehearsal & Readiness Testing for Payroll.</p>
+                        <p class="text-xs text-gray-500 mt-1">Milestone: Go-Live Report Issued</p>
+                    </div>
+                    <div class="text-center flow-arrow">→</div>
+                    <div class="flow-box md:col-span-1 bg-green-50 border-green-200">
+                        <h4 class="text-green-800">HR Services Payroll Go Live</h4>
+                        <p class="text-sm text-green-700">KT Start Date: TBD</p>
+                        <p class="text-sm text-green-700">Go Live Date: TBD</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controllership Stream -->
+            <div class="p-6 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-[#023047] mb-4 border-b-2 border-[#8ECAE6] pb-2">Controllership Stream: RTR, FP&A, & Treasury</h3>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+                    <div class="flow-box md:col-span-1">
+                        <h4>PwC / Duracell</h4>
+                        <p>KT Planning & Scope Alignment for RTR, FP&A, Treasury.</p>
+                    </div>
+                    <div class="text-center flow-arrow">→</div>
+                    <div class="flow-box md:col-span-1">
+                        <h4>Duracell SME</h4>
+                        <p>Conducts KT Sessions for these processes.</p>
+                    </div>
+                    <div class="text-center flow-arrow">→</div>
+                    <div class="flow-box md:col-span-1">
+                        <h4>PwC / New Team</h4>
+                        <p>Service Rehearsal & Readiness Testing for these processes.</p>
+                        <p class="text-xs text-gray-500 mt-1">Milestone: Go-Live Report Issued</p>
+                    </div>
+                    <div class="text-center flow-arrow">→</div>
+                    <div class="flow-box md:col-span-1 bg-green-50 border-green-200">
+                        <h4 class="text-green-800">Controllership Go Live</h4>
+                        <p class="text-sm text-green-700">KT Start Date: TBD</p>
+                        <p class="text-sm text-green-700">Go Live Date: TBD</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Timeline Section (Updated for new phases) -->
+        <section id="timeline" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-700 mb-6 border-l-4 border-amber-500 pl-4">5. Overall Project Phasing & Estimated Duration</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="chart-container">
+                    <canvas id="timelineChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-4">This chart visualizes the project's key phases including the newly emphasized 'Service Rehearsal' and their estimated durations, providing a clear roadmap to our 'Go Live'.</p>
+            </div>
+        </section>
+        
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to wrap long labels
+            function formatLabel(str, maxwidth){
+                const sections = [];
+                const words = str.split(' ');
+                let temp = '';
+                
+                words.forEach(function(item, index){
+                    if( (temp + ' ' + item).trim().length > maxwidth ){
+                        sections.push(temp.trim());
+                        temp = item;
+                    } else {
+                        temp += ' ' + item;
+                    }
+                });
+                if(temp){
+                    sections.push(temp.trim());
+                }
+                
+                return sections;
+            }
+
+            // Timeline Chart (Updated with new phases)
+            const ctx = document.getElementById('timelineChart').getContext('2d');
+            const timelineChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        formatLabel('Planning (Transition Plan)'), 
+                        formatLabel('Knowledge Capture (DTPs)'),
+                        formatLabel('Knowledge Transfer (Readiness)'), 
+                        formatLabel('Service Rehearsal (Go-Live Report)'),
+                        formatLabel('Hypercare (30-60-90 Day Plan)'),
+                        'Our Go Live'
+                    ],
+                    datasets: [{
+                        label: 'Estimated Duration (Weeks)',
+                        data: [2, 3, 4, 3, 2, 0], // Go Live is a point, not a duration
+                        backgroundColor: [
+                            '#8ECAE6', // Planning
+                            '#219EBC', // KC
+                            '#023047', // KT
+                            '#FFB700', // Service Rehearsal
+                            '#FB8500', // Hypercare
+                            '#10B981'  // Green for Go Live
+                        ],
+                        borderColor: [
+                            '#FFFFFF',
+                            '#FFFFFF',
+                            '#FFFFFF',
+                            '#FFFFFF',
+                            '#FFFFFF',
+                            '#FFFFFF'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Makes the bar chart horizontal
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Project Phases and Estimated Duration in Weeks'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                        return label.join(' ');
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Duration in Weeks'
+                            }
+                        },
+                        y: {
+                           ticks: {
+                               autoSkip: false
+                           }
+                        }
+                    }
+                }
+            });
+
+            // PDF Download functionality
+            document.getElementById('downloadPdf').addEventListener('click', function() {
+                const element = document.getElementById('infographic-content'); // Target the main content div
+                html2pdf(element, {
+                    margin: 10,
+                    filename: 'Duracell_LATAM_KC_Infographic.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
+                    jsPDF: { unit: 'mm', format: 'a3', orientation: 'portrait' } // Using A3 for more content
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
